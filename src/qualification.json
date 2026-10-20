@@ -1,0 +1,40 @@
+{
+  "name": "컴퓨터활용능력 1급",
+  "subjects": [
+    "컴퓨터 일반",
+    "스프레드시트 일반",
+    "데이터베이스 일반"
+  ],
+  "exam": {
+    "questionCount": 60,
+    "questionsPerSubject": 20,
+    "durationMinutes": 60,
+    "choiceCount": 4,
+    "passScore": 60,
+    "subjectCutoff": 40
+  },
+  "storageNamespace": "computer-literacy1-cbt:v1",
+  "bankId": "main",
+  "rulesVerification": {
+    "status": "pending-official-access",
+    "officialUrl": "https://license.korcham.net/co/examguide.do?cd=0103&mm=21",
+    "checkedAt": "2026-10-20",
+    "limitation": "비공식 필기 연습용입니다. 최신 공식 시험 안내·출제기준 대조가 끝나지 않아 규칙은 잠정 적용합니다. 기출문제와 실기시험은 제공하지 않습니다. 실제 응시 전 대한상공회의소 안내를 확인하세요.",
+    "accessFailure": "2026-10-20: official site CONNECT blocked by environment proxy: HTTP 403"
+  },
+  "standard": {
+    "version": "1.0.0",
+    "commit": "b9a682ccff1b460334b78d5bfad9375b7ec4fbb6"
+  },
+  "questionBank": {
+    "count": 1000,
+    "original": 1000,
+    "past": 0,
+    "reconstructed": 0,
+    "expertReviewed": false
+  },
+  "deployment": {
+    "repository": "YunSangYeong/Computer-Literacy1",
+    "base": "/Computer-Literacy1/"
+  }
+}

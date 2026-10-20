@@ -1,0 +1,25 @@
+[
+  {
+    "id": "LOCAL-TEMPLATE-001",
+    "subject": "컴퓨터 일반",
+    "topic": "기본 개념",
+    "question": "[등록 예제] RAM의 일반적인 특성으로 옳은 것은?",
+    "choices": [
+      "항상 읽기만 가능하다.",
+      "CPU의 산술 연산 전용 장치이다.",
+      "영구 보관용 광학 매체이다.",
+      "전원이 끊기면 저장 내용이 사라지는 휘발성 메모리이다."
+    ],
+    "answer": 4,
+    "explanation": "일반적인 주기억장치 RAM은 읽기·쓰기가 가능하지만 전원 공급이 끊기면 내용이 유지되지 않는다. 영구 보관은 보조기억장치의 역할이다.",
+    "difficulty": "중",
+    "year": null,
+    "session": null,
+    "type": "original",
+    "sourceUrl": "https://github.com/YunSangYeong/Computer-Literacy1/blob/main/docs/question-provenance.md",
+    "verificationStatus": "pending",
+    "reviewNote": "사용자가 출처·권한·정답을 확인하고 근거를 기록해야 합니다.",
+    "version": "main",
+    "rights": "자체 제작 · CC BY 4.0 · Computer-Literacy1 contributors"
+  }
+]
