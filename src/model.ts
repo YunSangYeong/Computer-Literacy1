@@ -231,7 +231,7 @@ export function answerExam(
     !state.exam.questions.some((q) => q.id === id) ||
     !Number.isInteger(answer) ||
     answer < 1 ||
-    answer > 4
+    answer > EXAM_RULES.choiceCount
   )
     return state;
   return {
@@ -350,17 +350,17 @@ export function validateQuestion(value: unknown): Question {
     throw new Error("과목이 올바르지 않습니다.");
   if (
     !Array.isArray(q.choices) ||
-    q.choices.length !== 4 ||
+    q.choices.length !== EXAM_RULES.choiceCount ||
     q.choices.some(
       (c) => typeof c !== "string" || !c.trim() || c.length > 2000,
     ) ||
-    new Set(q.choices.map((c) => String(c).trim())).size !== 4
+    new Set(q.choices.map((c) => String(c).trim())).size !== EXAM_RULES.choiceCount
   )
     throw new Error("서로 다른 보기 4개가 필요합니다.");
   if (
     !Number.isInteger(q.answer) ||
     Number(q.answer) < 1 ||
-    Number(q.answer) > 4
+    Number(q.answer) > EXAM_RULES.choiceCount
   )
     throw new Error("정답 번호는 1~4입니다.");
   if (
@@ -518,7 +518,7 @@ export function restoreStore(raw: string | null): Store {
           !e.questions.some((q) => q.id === id) ||
           !Number.isInteger(a) ||
           a < 1 ||
-          a > 4,
+          a > EXAM_RULES.choiceCount,
       )
     )
       throw new Error("답안 데이터가 올바르지 않습니다.");
@@ -546,7 +546,7 @@ export function restoreStore(raw: string | null): Store {
       !Array.isArray(p.seen) ||
       typeof p.currentId !== "string" ||
       (p.selected !== null &&
-        (!Number.isInteger(p.selected) || p.selected < 1 || p.selected > 4)) ||
+        (!Number.isInteger(p.selected) || p.selected < 1 || p.selected > EXAM_RULES.choiceCount)) ||
       typeof p.revealed !== "boolean" ||
       ![p.streak, p.answered, p.correct].every(
         (n) => Number.isInteger(n) && n >= 0,

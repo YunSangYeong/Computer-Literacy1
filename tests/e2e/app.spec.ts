@@ -343,6 +343,11 @@ test("채점 후 Space로 한 문제씩 이동하고 버튼·컨트롤·대화�
     .getByRole("button")
     .first()
     .click();
+  // IME composition and modified Space must leave the graded question in place.
+  for (const detail of [{isComposing:true},{ctrlKey:true},{altKey:true},{metaKey:true}]) {
+    await page.evaluate(detail=>window.dispatchEvent(new KeyboardEvent("keydown",{key:" ",code:"Space",bubbles:true,...detail})),detail);
+    expect((await read(page)).practice.currentId).toBe(secondId);
+  }
   // Holding the key must not auto-advance.
   await page.evaluate(() =>
     window.dispatchEvent(
