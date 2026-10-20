@@ -1,4 +1,3 @@
-import profile from "./qualification.json";
 import {
   useCallback,
   useEffect,
@@ -581,7 +580,6 @@ function App() {
           </div>
         </header>
         <main ref={sectionRef} tabIndex={-1}>
-          <div className="notice warning" role="note">{profile.rulesVerification.limitation}</div>
           {storageError && (
             <div className="notice warning" role="alert">
               {storageError}
